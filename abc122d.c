@@ -17,7 +17,8 @@ int main(void){
     dp[0][i] = 1;
   }
 
-  for(int i = 0;i < 110;i ++){
+  for(int i = 0;i < 100;i ++){
+    printf("a");
     for(int j = 0;j < 4;j ++){
       //A
       dp[i+1][A] += dp[i][j];
