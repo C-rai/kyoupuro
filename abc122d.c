@@ -18,11 +18,11 @@ int main(void){
   }
 
   for(int i = 0;i < 100;i ++){
-    printf("a");
     for(int j = 0;j < 4;j ++){
       //A
       dp[i+1][A] += dp[i][j];
       //C
+      dp[i+1][C] += dp[i][j];
       //AGC
       if(j == G){
         if(i-1 >= 0){
@@ -35,18 +35,13 @@ int main(void){
           dp[i+1][C] -= dp[i-1][G];
         }
       }
-      else{
-        dp[i+1][C] += dp[i][j];
-      }
       //G
+      dp[i+1][G] += dp[i][j];
       //ACG
       if(j == C){
         if(i -1 >= 0){
           dp[i+1][G] -= dp[i-1][A];
         }
-      }
-      else{
-        dp[i+1][G] += dp[i][j];
       }
       //T
       dp[i+1][T] += dp[i][j];
