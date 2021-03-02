@@ -28,6 +28,7 @@ int main(void){
           dp[i+1][C] -= dp[i-1][A];
         }
       }
+      //GAC
       else if(j == A){
         if(i-1 >= 0){
           dp[i+1][C] -= dp[i-1][G];
@@ -37,7 +38,15 @@ int main(void){
         dp[i+1][C] += dp[i][j];
       }
       //G
-      dp[i+1][G] += dp[i][j];
+      //ACG
+      if(j == C){
+        if(i -1 >= 0){
+          dp[i+1][G] -= dp[i-1][A];
+        }
+      }
+      else{
+        dp[i+1][G] += dp[i][j];
+      }
       //T
       dp[i+1][T] += dp[i][j];
     }
