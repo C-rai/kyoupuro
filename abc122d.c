@@ -22,12 +22,14 @@ int main(void){
       //A
       dp[i+1][A] += dp[i][j];
       //C
-      dp[i+1][C] += dp[i][j];
       //AGC
       if(j == G){
         if(i-1 >= 0){
           dp[i+1][C] -= dp[i-1][A];
         }
+      }
+      else{
+        dp[i+1][C] += dp[i][j];
       }
       //G
       dp[i+1][G] += dp[i][j];
