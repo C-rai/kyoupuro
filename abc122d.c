@@ -28,6 +28,11 @@ int main(void){
           dp[i+1][C] -= dp[i-1][A];
         }
       }
+      else if(j == A){
+        if(i-1 >= 0){
+          dp[i+1][C] -= dp[i-1][G];
+        }
+      }
       else{
         dp[i+1][C] += dp[i][j];
       }
