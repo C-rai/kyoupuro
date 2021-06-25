@@ -29,7 +29,7 @@ void q_sort(int a[],int n,int min,int max){
   int big[n],small[n];
   int aind = 0,bind = 0,sind = 0;
   int mid = (min+max)/2;
-
+/*midより大きいのはbig 小さいのは*/
   for(int i = 0;i < n;i ++){
     if(a[i] >= mid){
       big[bind] = a[i];
